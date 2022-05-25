@@ -1,10 +1,7 @@
 import React, {useState} from 'react';
 import REACT_APP_WEATHER_API_KEY from './apiKey';
-// const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
 const api = {
-  // key: `${wKey}`,
-  // key: `${API_KEY}`,
   base: "https://api.openweathermap.org/data/2.5/"
 }
 
@@ -27,7 +24,6 @@ function App() {
         .then(result => {
           setWeather(result);
           setQuery('');
-          console.log(REACT_APP_WEATHER_API_KEY);
           console.log(result);
         });
     }
@@ -35,19 +31,9 @@ function App() {
 
   return (
     <div className = {
-      // if (typeof weather.main != "undefined"){
-      //   if ((weather.main.temp > 16) 
-      //     className = 'app warm';
-      // }
-      
       (typeof weather.main != "undefined")
         ? ((weather.main.temp > 16) 
           ? 'app warm' : 'app') : 'app'
-
-        // ? (weather.main.temp < 12)
-        //   // ? 'app.cold' : 'app'
-        //     ? ((weather.weather[0].main === 'clear')
-        //       ? 'app clear' : 'app') : 'app' : 'app'
     }>
     
     <main>
