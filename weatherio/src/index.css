@@ -19,6 +19,20 @@ body{
   transition: 0.4s ease-out;
 }
 
+.app.clouds{
+  background-image: url(./assets/clouds_bg.jpg);
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4s ease-out;
+}
+
+.app.snow{
+  background-image: url(./assets/snow_bg.gif);
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4s ease-out;
+}
+
 .app.warm{
   background-image: url(./assets/clearSky.gif);
   background-size: cover;

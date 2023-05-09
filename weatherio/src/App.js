@@ -30,11 +30,23 @@ function App() {
   }
 
   return (
-    <div className = {
-      (typeof weather.main != "undefined")
-        ? ((weather.main.temp > 16) 
-          ? 'app warm' : 'app') : 'app'
+    <div className={
+      typeof weather.main !== "undefined" ?
+        (
+          (weather.main.temp >= 16 && (weather.weather[0].main === 'Smoke' || weather.weather[0].main === 'Sunny' || weather.weather[0].main === 'Mist')) ?
+            'app warm'
+          : (weather.main.temp < 6 && weather.weather[0].main === 'Snow') ?
+            'app snow'
+          : (weather.weather[0].main === 'Clouds' || weather.weather[0].main === 'Broken clouds') ?
+            'app clouds'
+          : (weather.weather[0].main === 'Rain') ?
+            'app'
+          : 'app clear'
+        )
+        : 'app'
     }>
+
+  
     
     <main>
         
